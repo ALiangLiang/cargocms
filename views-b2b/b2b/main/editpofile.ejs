@@ -52,10 +52,6 @@
         <div class="projects form-group" id="orderFormWrapper">
           <div class="margin-bottom-20">
             <img class="img-responsive img-bordered" src="<%= user.avatar %>" alt="" style="margin: auto; width: 100%;"/>
-            <% var info = req.flash('info')[0]; %>
-            <% if (info) { %>
-              <div class="alert alert-warning" role="alert"><%= info %></div>
-            <% } %>
           </div>
           <form class="userProfileForm" id="userProfileForm" action="/api/user/edit" method="post">
 
@@ -239,3 +235,12 @@
 <% LayoutUtils.addScripts('/assets/b2b/page/profile/edit.js'); %>
 <% LayoutUtils.addScripts('/assets/admin/js/libs/fine-uploader.min.js'); %>
 <% LayoutUtils.addScripts('/assets/b2b/lib/fineuploader.js'); %>
+<% const title = req.flash('title')[0]; %>
+<% const info = req.flash('info')[0]; %>
+<% if (info) { %>
+
+  <% LayoutUtils.addScriptBlock(`
+    sweetAlert('${title || ''}', '${info}', 'success');
+  `); %>
+  
+<% } %>

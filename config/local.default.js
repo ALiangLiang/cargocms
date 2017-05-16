@@ -98,8 +98,15 @@ module.exports = {
       level: 'info'
     }
   },
+
+  paymentMethods: [
+    'ATM轉帳',  
+    '貨到付款'  
+  ],
   defaultPaymentMethods: [{
+     // type of payment
     key: 'ATM',
+     // value of type ATM. In this case, value is ATM account number.
     value: 'Default ATM account number'
   }]
 }

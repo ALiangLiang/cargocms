@@ -102,3 +102,6 @@
 ### Feed 欄位變動
 * 修改 fullPicture 欄位 型態 STRING 修改為 TEXT
 * type 欄位等於 'status'，將 publish欄位 修改為 false
+
+### Product 欄位增加
+* 增加一個 unit 欄位，型態 STRING，不可為空值，在 weight 之後。

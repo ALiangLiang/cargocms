@@ -85,7 +85,7 @@
               <label class="control-label">特級 <%= data.items[p].price %> /包</label>
             </div>
             <div>
-              <label class="control-label"><%= data.items[p].weight %> 公克/包</label>
+              <label class="control-label"><%= data.items[p].weight %> <%= data.items[p].unit %>/包</label>
             </div>
             <% if(data.items[p].quantity > 0) { %>
               <div>

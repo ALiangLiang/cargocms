@@ -103,7 +103,7 @@ export function requestLogIn(username: String, password: String) {
       identifier: username,
       password,
     });
-    log.info('fetchResult=>', fetchResult);
+    // log.info('fetchResult=>', fetchResult);
     // success
     const result = fetchResult.data;
     if (fetchResult.status && result.data) {

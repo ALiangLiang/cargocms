@@ -91,7 +91,7 @@ module.exports.init = async () => {
 
       await Event.create({
         title: '下完訂單後，我該如何付款？',
-        description: '請將您的訂單款項使用 ATM 轉帳至 [郵局 700 0000000 1234567]<br/>匯款完成後再與客服人員聯繫，謝謝。',
+        description: '下訂單後，會在訂單資訊左下方顯示付款方式，請依照指示付款即可。',
         sellStartDate: '2017-01-01 00:00:00',
         sellEndDate: '2017-01-01 00:00:00',
         eventStartDate: '2017-01-01 00:00:00',

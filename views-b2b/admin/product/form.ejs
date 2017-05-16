@@ -143,11 +143,19 @@
   -->
 
   <div class="row">
-    <section class="col col-lg-4 col-md-4 col-sm-4 col-xs-4">
+    <section class="col col-lg-2 col-md-2 col-sm-2 col-xs-2">
       <label class="label"><span class="text-danger fn-show-hidden">*</span>重量</label>
       <label class="input state-disabled">
         <input type="number" name="weight" placeholder="" v-model="data.item.weight" disabled>
         <b class="tooltip tooltip-bottom-right">請輸入重量</b></label>
+      </label>
+    </section>
+    
+    <section class="col col-lg-2 col-md-2 col-sm-2 col-xs-2">
+      <label class="label"><span class="text-danger fn-show-hidden">*</span>單位</label>
+      <label class="input state-disabled">
+        <input type="text" name="unit" placeholder="" v-model="data.item.unit" disabled>
+        <b class="tooltip tooltip-bottom-right">請輸入單位</b></label>
       </label>
     </section>
 
@@ -179,7 +187,7 @@
   </div>
 
   <div class="row">
-    <section class="col col-lg-1 col-md-1 col-sm-1 col-xs-1">
+    <section class="col col-lg-2 col-md-2 col-sm-2 col-xs-2">
       <label class="label">稅率</label>
       <label class="input state-disabled">
         <input type="number" name="length" step="0.01" placeholder="" v-model="data.item.taxRate" v-on:click="computeTax()" disabled>

@@ -8,7 +8,10 @@ module.exports = {
     res.view(
       'b2b/order/form',
       {
-        token
+        token,
+        data: {
+          paymentMethods: JSON.parse(sails.config.paymentMethods)
+        }
       }
     );
   },

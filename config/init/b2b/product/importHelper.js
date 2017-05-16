@@ -80,6 +80,7 @@ module.exports.create = async(obj) => {
         points: 200,
         dateAvailable: "2017-01-01",
         weight: rawProduct.weight,
+        unit: '公斤',
         length: 10,
         width: 10,
         height: 10,

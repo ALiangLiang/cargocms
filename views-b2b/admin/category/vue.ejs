@@ -53,3 +53,15 @@ appMain.createHide = function () {
 appMain.showPageHidden = function(){
   $('.fn-show-hidden').hide();
 }
+
+appMain.customSearch = function(data) {
+  appModel.pagingQuery.columns.push({
+    data: 'categoryName',
+    searchable: true,
+    findInclude: true,
+    search: {
+      model: 'CategoryDescription',
+      column: 'name',
+    }
+  });
+}

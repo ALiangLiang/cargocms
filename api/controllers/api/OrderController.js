@@ -116,23 +116,24 @@ module.exports = {
 
       message = 'get Order info success';
 
-      // // get all payment methods from db
-      // let paymentMethods = await Config.findAll({
-      //   where: {
-      //     name: 'paymentSetting'
-      //   }
-      // })
 
-      // // if nothing in DB, use default method in config/local.js
-      // if (paymentMethods.length === 0)
-      //   paymentMethods = sails.config.defaultPaymentMethods || [] // if nothing in config/local.js, empty methods
+      // get all payment methods from db
+      let paymentMethods = await Config.findAll({
+        where: {
+          name: 'paymentSetting'
+        }
+      })
+      
+        // if nothing in DB, use default method in config/local.js
+      if (paymentMethods.length === 0)
+        paymentMethods = JSON.parse(sails.config.defaultPaymentMethods) || [] // if nothing in config/local.js, empty methods
 
       res.view('b2b/order/index', {
         message: message,
         data: {
           item: order,
           product: orderProduct,
-          // paymentMethods: paymentMethods || []
+          paymentMethods: paymentMethods || []
         }
       });
 

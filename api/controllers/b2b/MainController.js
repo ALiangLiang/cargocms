@@ -13,7 +13,8 @@ module.exports = {
 
       const user = await User.findOneWithPassport({ id: loginUser.id });
       if (user.verificationEmailToken) {
-        req.flash('info', '您更新了 Email ，請至新信箱點擊認證連結');
+        req.flash('title', '恭喜您註冊完成！');
+        req.flash('info', '請再次確認以下資料皆正確無誤，並請您到註冊時的信箱收取確認信以開通帳號！');
       }
       return res.view({
         user: user,

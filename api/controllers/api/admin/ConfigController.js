@@ -56,6 +56,8 @@ module.exports = {
       const data = req.body;
       delete data.deletedAt;
       const message = 'Update success.';
+      if(data.description === '')
+        delete data.description
       const item = await Config.update(data ,{
         where: { id, },
       });

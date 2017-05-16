@@ -75,7 +75,7 @@ module.exports.init = async () => {
         "shippingZoneId": 0,
         "shippingAddressFormat": "",
         "shippingCustomField": "",
-        "shippingMethod": "郵局遞送",
+        "shippingMethod": "低溫宅配",
         "shippingCode": "123456789009876",
         "comment": "no comment",
         "total": 10000,

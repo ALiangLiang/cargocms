@@ -1,5 +1,6 @@
 import FacebookHelper from './libraries/facebook/';
 import _ from 'lodash';
+import util from 'util';
 
 module.exports = {
   process: async({ query, modelName, include }) => {
@@ -25,7 +26,7 @@ module.exports = {
       const recordsTotal = data.length
       const recordsFiltered = result.count;
       const draw = parseInt(query.draw) + 1;
-      // console.log('@@@@@@ findQuery=>', findQuery);
+      // console.log('@@@@@@ findQuery=>', util.inspect(findQuery, { showHidden: true, depth: null }));
       // console.log('@@@@@@ findQuery result=>', result);
       return { draw, recordsTotal, recordsFiltered, data };
     } catch (e) {

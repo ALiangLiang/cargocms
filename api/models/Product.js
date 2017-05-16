@@ -124,6 +124,12 @@ module.exports = {
       defaultValue: '0.00000000',
     },
 
+    unit :{
+      type: Sequelize.STRING(8),
+      allowNull: false,
+      defaultValue: '',
+    },
+
     // weightClassId: {
     //   Sequelize.INTEGER(11),
     //   allowNull: false,

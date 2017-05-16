@@ -105,21 +105,20 @@
   </table>
   <hr style="border-top: 3px solid #eee"/>
   
-  <!--<div class="pull-left">-->
-  <!--  <% if(data.paymentMethods.length !== 0) { %>-->
-  <!--    <span  style="font-size: 1.5em;">付款資訊</span>-->
-  <!--    <% data.paymentMethods.forEach((method) => { %>-->
-  <!--      <% if(method.key === 'ATM') { %>-->
-  <!--        <br>-->
-  <!--        請將您的訂單款項使用 ATM 轉帳至 [郵局  <%- method.value %>]-->
-  <!--        <br>-->
-  <!--        匯款完成後再與客服人員聯繫，謝謝。-->
-  <!--      <% } else { %>-->
-  <!--        <%- method.value %>-->
-  <!--      <% } %>-->
-  <!--    <% }) %>-->
-  <!--  <% } %>-->
-  <!--</div>-->
+  <div class="pull-left">
+    <% if(data.paymentMethods.length !== 0) { %>
+      <span  style="font-size: 1.5em;font-weight:bold;">付款資訊</span>
+      <% let payments = data.paymentMethods.filter((method) => method.get('key') === 'ATM') %>
+      <% if(data.item.paymentMethod === 'ATM轉帳' && payments.length !== 0) { %>
+        <% payments.forEach((payment) => { %>
+          <br>
+          請將您的訂單款項使用 ATM 轉帳至 <span style="font-weight:bold">[郵局  <%- payment.value %>]</span>
+          <br>
+          匯款完成後再與客服人員聯繫，謝謝。
+        <% }) %>
+      <% } %>
+    <% } %>
+  </div>
 
   <table class="b2b-bill-info pull-right" style="margin-top: 1em;">
     <tr>
@@ -134,9 +133,6 @@
   </table>
 
   <div class="paid pull-right">
-    <% if (data.item.paymentMethod === 'ATM轉帳') { %>
-      <a href="/questions/payment" class="btn btn-info btn-lg">付款資訊</a>
-    <% } %>
     <button class="btn btn-default btn-lg " onclick="goBackIndex();">繼續選購</button>
   </div>
   

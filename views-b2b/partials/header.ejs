@@ -81,6 +81,10 @@
   </div><!-- /.container-fluid -->
 </nav>
 
+<!-- 因為原本的 navbar fixed 後會浮空，導致下方元件會上移佔據原本 navbar的位置 -->
+<div class="navbar" style="margin:0"></div> 
+<!-- 所以在底下增加一塊 navbar 來擠下底下的原件 -->
+
 <% LayoutUtils.addScriptBlock(`
   $('.logout-link').click(function(){
     swal({
